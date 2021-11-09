@@ -7,24 +7,24 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+              <li class="nav-item ">
+                <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="products.html">Our Products</a>
+              <li class="nav-item ">
+                <a class="nav-link {{ ($title === "Products") ? 'active' : '' }}" href="/products">Our Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="/about">About Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
-            <div class="ml-4">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
             @if (Route::has('login'))
-                <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -34,9 +34,10 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-                </div>
             @endif
-          </div>
+              </li>
+            </ul>
+            
         </div>
       </nav>
 </header>
