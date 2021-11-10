@@ -1,42 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
+<head>
+    <!-- basic -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>niture</title>
+    <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+  <body class="main-layout">
 
-    <title>Serenade Decor</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!--
+        <!-- header -->
+            <header>
+                <!-- header inner -->
+                <div class="header">
 
-TemplateMo 546 Sixteen Clothing
+                    <div class="container- ">
 
-https://templatemo.com/tm-546-sixteen-clothing
+                        <div class="row">
+                            <div class="col-lg-3 logo_section">
+                                <div class="full">
+                                    <div class="center-desk">
+                                        <div class="logo">
+                                            <a class="navbar-brand" href="/" style="color: #01312e;"><img style="width: 100px; margin-left: 30px; margin-top: -50px; margin-bottom: -50px;" src="images/serenade1.png">SERENADE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="right_header_info">
+                                    <ul>
+                                        <li>
+                                            @if (Route::has('login'))
+                                                    @auth
+                                                        <a href="{{ url('/home') }}">Home</a>
+                                                    @else
+                                                        <a href="{{ route('login') }}"><img style="margin-right: 15px;" src="icon/1.png"/></a>
 
--->
+                                                        @if (Route::has('register'))
+                                                            <a href="{{ route('register') }}">Register</a>
+                                                        @endif
+                                                    @endauth
+                                            @endif
+                                        </li>
+                                        <li class="tytyu">
+                                            <a href="#"><img style="margin-right: 15px;" src="icon/2.png" alt="#" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img style="margin-right: 15px;" src="icon/3.png" alt="#" /></a>
+                                        </li>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+                                        <li>
+                                            <button type="button" id="sidebarCollapse">
+                                                <img src="images/menu_icon.png" alt="#" />
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  </head>
-  <body>
-  <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+                <!-- end header inner -->
+            </header>
   @include('partials.navbar')
 
   
@@ -45,30 +95,56 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 @include('partials.footer')
    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-   <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
 
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
 
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
+        });
+    </script>
+    <script>
+      // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+      // Australia.
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: {lat: 40.645037, lng: -73.880224},
+          });
+
+      var image = 'images/maps-and-flags.png';
+      var beachMarker = new google.maps.Marker({
+          position: {lat: 40.645037, lng: -73.880224},
+          map: map,
+          icon: image
+        });
       }
     </script>
+    <!-- google map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+    <!-- end google map js --> 
   </body>
 </html>
 

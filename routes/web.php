@@ -30,5 +30,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/admin', function(){
-    return view('admin.index');
+    return view('admin.index')->middleware('auth');
 });

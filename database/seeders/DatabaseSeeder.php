@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+       
+        
+        Category::create([
+            'nama_category' => 'Aksesoris'
+            
+        ]);
+
+        Category::create([
+            'nama_category' => 'Bed Room'
+        
+        ]);
+
+        Category::create([
+            'nama_category' => 'Internal'
+
+        ]);
     }
 }

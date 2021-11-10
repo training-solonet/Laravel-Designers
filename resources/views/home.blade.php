@@ -1,207 +1,291 @@
 @extends('layouts.main')
 
 @section('container')
-<body>
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-          <div class="text-content">
-            <h4>Best Offer</h4>
-            <h2>New Arrivals On Sale</h2>
-          </div>
-        </div>
-        <div class="banner-item-02">
-          <div class="text-content">
-            <h4>Flash Deals</h4>
-            <h2>Get your best products</h2>
-          </div>
-        </div>
-        <div class="banner-item-03">
-          <div class="text-content">
-            <h4>Last Minute</h4>
-            <h2>Grab last minute deals</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Banner Ends Here -->
+<body class="main-layout">
 
-    <div class="latest-products">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Latest Products</h2>
-              <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$25.75</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_02.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$30.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (21)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$20.45</h6>
-                <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (36)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_04.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$15.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (48)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$12.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (16)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$22.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (32)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="wrapper">
 
-    <div class="best-features">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>About Sixteen Clothing</h2>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="left-content">
-              <h4>Looking for the best products?</h4>
-              <p><a rel="nofollow" href="https://templatemo.com/tm-546-sixteen-clothing" target="_parent">This template</a> is free to use for your business websites. However, you have no permission to redistribute the downloadable ZIP file on any template collection website. <a rel="nofollow" href="https://templatemo.com/contact">Contact us</a> for more info.</p>
-              <ul class="featured-list">
-                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                <li><a href="#">Consectetur an adipisicing elit</a></li>
-                <li><a href="#">It aquecorporis nulla aspernatur</a></li>
-                <li><a href="#">Corporis, omnis doloremque</a></li>
-                <li><a href="#">Non cum id reprehenderit</a></li>
-              </ul>
-              <a href="about.html" class="filled-button">Read More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="right-image">
-              <img src="assets/images/feature-image.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <div class="row">
-                <div class="col-md-8">
-                  <h4>Creative &amp; Unique <em>Sixteen</em> Products</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
+        <div id="content">
+            
+            <section class="slider_section">
+                <div class="banner_main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mapimg">
+                                <div class="text-bg">
+                                    <h1>The latest <br> <strong class="black_bold">furniture Design</strong><br></h1>
+                                    <a href="#">Shop Now <i class='fa fa-angle-right'></i></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="text-img">
+                                    <figure><img src="images/bg.jpg" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                  <a href="#" class="filled-button">Purchase Now</a>
+            </section>
+
+            <!-- discount -->
+            <div class="container">
+                <div id="myCarousel" class="carousel slide banner_Client" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="carousel-caption text">
+                                    <div class="row">
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                            <div class="img_bg">
+                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                            <div class="img_bg">
+                                                <figure><img src="images/discount.jpg" /></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="carousel-caption text">
+                                    <div class="row">
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                            <div class="img_bg">
+                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                            <div class="img_bg">
+                                                <figure><img src="images/discount.jpg" /></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="carousel-caption text">
+                                    <div class="row">
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                            <div class="img_bg">
+                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                            <div class="img_bg">
+                                                <figure><img src="images/discount.jpg" /></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <!-- end discount -->
+            <!-- trending -->
+            <div class="trending">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <div class="title">
+                                <h2>Trending <strong class="black">Categories</strong></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
+                            <div class="trending-box">
+                                <figure><img src="images/1.jpg" /></figure>
+                                <h3>Outdoor</h3>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="trending-box">
+                                <figure><img src="images/2.jpg" /></figure>
+                                <h3>Living Room</h3>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
+                            <div class="trending-box">
+                                <figure><img src="images/3.jpg" /></figure>
+                                <h3>Bedroom Lighting</h3>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end trending -->
+
+            <!-- our brand -->
+            <div class="brand">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title">
+                                <h2>Featured <strong class="black">Brands</strong></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="brand-bg">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
+                            <div class="brand-box">
+                                <i><img src="icon/p1.png"/></i>
+                                <h3>Jane Lauren Design Chair</h3>
+                                <span>$80.00</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
+                            <div class="brand-box">
+                                <i><img src="icon/p2.png"/></i>
+                                <h3>Jane Lauren Design Chair</h3>
+                                <span>$80.00</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                            <div class="brand-box">
+                                <i><img src="icon/p3.png"/></i>
+                                <h3>Jane Lauren Design Chair</h3>
+                                <span>$80.00</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                            <div class="brand-box">
+                                <i><img src="icon/p4.png"/></i>
+                                <h3>Jane Lauren Design Chair</h3>
+                                <span>$80.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end our brand -->
+            <!-- map -->
+            <div class="contact">
+                <div class="container-fluid padddd">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <div class="title">
+                                <h2>Contact <strong class="black">Us</strong></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
+                             <div class="map_section">
+                     <div id="map">
+                     </div>
+                   </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
+                            <form class="main_form">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Name" type="text" name="Name">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Email" type="text" name="Email">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button class="send">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end map -->
+            
         </div>
-      </div>
+
     </div>
 
-  </body>
+    <div class="overlay"></div>
+
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+        });
+    </script>
+    <script>
+      // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+      // Australia.
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: {lat: 40.645037, lng: -73.880224},
+          });
+
+      var image = 'images/maps-and-flags.png';
+      var beachMarker = new google.maps.Marker({
+          position: {lat: 40.645037, lng: -73.880224},
+          map: map,
+          icon: image
+        });
+      }
+    </script>
+    <!-- google map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+    <!-- end google map js --> 
+    
+</body>
 @endsection
 
 
