@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
@@ -30,6 +31,14 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'nama_category' => 'Internal'
 
+        ]);
+
+        Role::create([
+            'name' => 'user'
+        ]);
+
+        Role::create([
+            'name' => 'admin'
         ]);
     }
 }

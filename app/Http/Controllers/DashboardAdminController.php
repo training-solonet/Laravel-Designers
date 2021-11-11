@@ -15,7 +15,9 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.products.index', [
+            'produks' => Produk::all()
+        ]);
     }
 
     /**
@@ -25,7 +27,9 @@ class DashboardAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -36,18 +40,35 @@ class DashboardAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nama_produk' => 'required|max:255',
+            'harga' => 'required',
+            'id_category' => 'required',
+            'stok_produk' => 'required',
+            'foto_produk' => 'image|file|max:1024',
+            'deskripsi' => 'required'
+        ]);
+
+        if($request->file('fot_produk')){
+            $validateData['foto_produk'] = $request->file('foto_produk')->store('product-foto_produk');
+        }
+
+        Produk::create($validateData);
+
+        return redirect('admin/products')->with('success', 'New Product has been added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Produk $product)
     {
-        //
+        return view('admin.products.show', [
+            'produk' => $product
+        ]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/admin', function(){
-    return view('admin.index')->middleware('auth');
+    return view('admin.index');
 });
+
+Route::resource('admin/products', DashboardAdminController::class);
