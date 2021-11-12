@@ -26,6 +26,21 @@
               <th scope="col">Aksi</th>
             </tr>
           </thead>
+          <tbody>
+          @foreach ($produk as $p )
+          <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $p->nama_produk }}</td>
+              <td>{{ $p->category->nama_category }}</td>
+              <td>{{ $p->harga_produk }}</td>
+              <td>{{ $p->stok_produk }}</td>
+              <td>{{ $p->foto_produk }}</td>
+              <td>
+
+              </td>
+          </tr>
+          @endforeach
+          </tbody>
 </div>
 
 @endsection

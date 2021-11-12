@@ -13,7 +13,7 @@
                     <a  href="/">Home</a>
                 </li>
                 <li class=" {{ ($title === "About") ? 'active' : '' }}">
-                    <a href="about.html">About</a>
+                    <a href="/about">About</a>
                 </li>
                 <li class=" {{ ($title === "Products") ? 'active' : '' }}">
                     <a href="/products">Product</a>

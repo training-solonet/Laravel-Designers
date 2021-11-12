@@ -15,8 +15,10 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
+        $produk = Produk::with('category')->get();
+        // return $category;
         return view('admin.products.index', [
-            'produks' => Produk::all()
+            'produk' => $produk,
         ]);
     }
 
@@ -40,7 +42,7 @@ class DashboardAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
+        $request->validate([
             'nama_produk' => 'required|max:255',
             'harga' => 'required',
             'id_category' => 'required',
@@ -48,14 +50,11 @@ class DashboardAdminController extends Controller
             'foto_produk' => 'image|file|max:1024',
             'deskripsi' => 'required'
         ]);
-
-        if($request->file('fot_produk')){
-            $validateData['foto_produk'] = $request->file('foto_produk')->store('product-foto_produk');
-        }
-
-        Produk::create($validateData);
-
-        return redirect('admin/products')->with('success', 'New Product has been added');
+    
+        Product::create($request->all());
+     
+        return redirect()->route('products.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**

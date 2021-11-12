@@ -9,6 +9,15 @@ class Produk extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nama_barang',
+        'id_category',
+        'harga_produk',
+        'stok_produk',
+        'foto_produk',
+        'deskripsi'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -21,6 +30,6 @@ class Produk extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'id_category','id');
     }
 }
