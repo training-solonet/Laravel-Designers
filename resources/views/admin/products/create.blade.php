@@ -23,23 +23,28 @@
     </div>
 @endif
    
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="/admin/products" method="POST" enctype="multipart/form-data">
     @csrf
   
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="nama_produk" class="form-control" placeholder="nama_produk">
-            </div>
-        </div>
+    <div class="mb-3">
+    <label for="nama_produk" class="form-label">Nama Produk</label>
+    <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="nama_produk" name="nama_produk">
+    @error('nama_produk')
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
+  </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Harga Produk:</strong>
-                <input type="number" name="harga_produk" class="form-control" placeholder="harga_produk">
-            </div>
+    <div class="mb-3">
+        <label for="harga_produk" class="form-label ">Harga Produk</label>
+        <input type="text" class="form-control @error('harga_produk') is-invalid @enderror" id="harga_produk" name="harga_produk">
+        @error('harga_produk')
+        <div class="invalid-feedback">
+            {{ $message }}
         </div>
+        @enderror
+    </div>
 
         <div class="mb-3">
           <label for="category" class="form-label">Category</label>
@@ -64,13 +69,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Foto :</strong>
-                <input type="number" name="foto_produk" class="form-control" placeholder="stok_produk">
+                <input type="file" name="foto_produk" class="form-control" placeholder="Image">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Detail:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                <strong>Deskrips:</strong>
+                <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="deskripsi"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -42,19 +42,22 @@ class DashboardAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validateData=$request->validate([
             'nama_produk' => 'required|max:255',
-            'harga' => 'required',
+            'harga_produk' => 'required',
             'id_category' => 'required',
             'stok_produk' => 'required',
             'foto_produk' => 'image|file|max:1024',
             'deskripsi' => 'required'
         ]);
+
+        if($request->file('foto_produk')){
+            $validateData['foto_produk']= $request->file('foto_produk')->store('produk-foto_produk');
+        }
     
-        Product::create($request->all());
+        Produk::create($validateData);
      
-        return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+        return redirect('/admin/products')->with('success', 'New Products has been added');
     }
 
     /**
@@ -96,11 +99,13 @@ class DashboardAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Produk  $p
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Produk $produk)
     {
-        //
-    }
+        Produk::destroy($produk->id);
+
+    return redirect('/admin/products')->with('success', "has been Deleted");
+    }   
 }

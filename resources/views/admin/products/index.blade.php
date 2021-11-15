@@ -34,9 +34,15 @@
               <td>{{ $p->category->nama_category }}</td>
               <td>{{ $p->harga_produk }}</td>
               <td>{{ $p->stok_produk }}</td>
-              <td>{{ $p->foto_produk }}</td>
+              <td> <img style="width: 30px"src="{{ asset('storage/'.$p->foto_produk) }}" class="img-fluid mt-3 mb-3"></td>
+              <td>{{ $p->deskripsi }}</td>
               <td>
-
+                  <a href="/admin/products/{{ $p->nama_produk }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                  <form action="/admin/products/{{ $p->nama_produk }}"   method="post" class="d-inline">
+                @method('delete')
+                @csrf
+                <button class="badge bg-danger border-0" onclick="return confirm('yakin ingin hapus?')"><span data-feather="x-circle"></span></button>
+                </form>
               </td>
           </tr>
           @endforeach
