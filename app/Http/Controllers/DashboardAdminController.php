@@ -57,7 +57,7 @@ class DashboardAdminController extends Controller
     
         Produk::create($validateData);
      
-        return redirect('/admin/products')->with('success', 'New Products has been added');
+        return redirect('admin/products')->with('success', 'New Products has been added');
     }
 
     /**
@@ -66,10 +66,10 @@ class DashboardAdminController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Produk $product)
+    public function show(Produk $produk)
     {
         return view('admin.products.show', [
-            'produk' => $product
+            'produk' => $produk
         ]);
     }
 
@@ -81,7 +81,13 @@ class DashboardAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+
+
+        return view('admin.products.edit' , [
+            'produk'     => $produk,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -93,7 +99,19 @@ class DashboardAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = ([
+            'nama_produk' => 'required|max:255',
+            'harga_produk' => 'required',
+            'id_category' => 'required',
+            'stok_produk' => 'required',
+            'foto_produk' => 'image|file|max:1024',
+            'deskripsi' => 'required'
+        ]);
+
+        $validateData = $request->validate($rules);
+
+        Produk::find($id)->update($validateData);
+        return redirect('admin/products')->with('success', 'Product has been Updated');
     }
 
     /**
@@ -102,10 +120,10 @@ class DashboardAdminController extends Controller
      * @param  \App\Models\Produk  $p
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk)
+    public function destroy($id)
     {
-        Produk::destroy($produk->id);
-
-    return redirect('/admin/products')->with('success', "has been Deleted");
+        $produk = Produk::find($id);
+        $produk->delete();
+        return redirect('admin/products')->with('success', "has been Deleted");
     }   
 }
