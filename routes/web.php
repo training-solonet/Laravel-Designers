@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DashboardAdminController;
 
 
@@ -15,21 +17,37 @@ use App\Http\Controllers\DashboardAdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/products', function(){
-    return view('products', [
-        "title" => "Products"
-    ]);
-});
+Route::get('/products', [ProdukController::class, 'index']);
 
 Route::get('/about', function(){
     return view('about', [
         "title" => "About"
+    ]);
+});
+route::get('blog', function(){
+    return view('blog', [
+        "title" => "Blog"
+    ]);
+});
+route::get('contact', function(){
+    return view('contact', [
+        "title" => "Contact"
+    ]);
+});
+
+Route::get('/categories', function(){
+    return view('categories', [
+        'title' => 'Post Categories',
+        'categories' => Category::all()
+    ]);
+});
+Route::get('/categories/{category}', function(Category $category){
+    return view('category', [
+        'title' => $category->name,
+        'produk' => $category->produk,
+        'category' => $category->name
     ]);
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

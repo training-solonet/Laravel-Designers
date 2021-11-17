@@ -108,28 +108,18 @@
                             </div>
                         </div>
                     </div>
+                        
                     <div class="row">
+                    @foreach ($category as $c )
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
                             <div class="trending-box">
                                 <figure><img src="images/1.jpg" /></figure>
-                                <h3>Outdoor</h3>
+                                <a href="/categories/"><h3>{{ $c->nama_category }}</h3></a>
 
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="trending-box">
-                                <figure><img src="images/2.jpg" /></figure>
-                                <h3>Living Room</h3>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
-                            <div class="trending-box">
-                                <figure><img src="images/3.jpg" /></figure>
-                                <h3>Bedroom Lighting</h3>
-
-                            </div>
-                        </div>
+                    @endforeach
+                        
 
                     </div>
                 </div>
@@ -152,34 +142,16 @@
             <div class="container-fluid">
                 <div class="brand-bg">
                     <div class="row">
+                    @foreach ($produk as $p )
+                        
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
                             <div class="brand-box">
-                                <i><img src="icon/p1.png"/></i>
-                                <h3>Jane Lauren Design Chair</h3>
-                                <span>$80.00</span>
+                                <i><img src="{{ asset('storage/'.$p->foto_produk) }}"/></i>
+                                <h3>{{ $p->nama_produk }}</h3>
+                                <span>Rp.{{ $p->harga_produk }}</span>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
-                            <div class="brand-box">
-                                <i><img src="icon/p2.png"/></i>
-                                <h3>Jane Lauren Design Chair</h3>
-                                <span>$80.00</span>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                            <div class="brand-box">
-                                <i><img src="icon/p3.png"/></i>
-                                <h3>Jane Lauren Design Chair</h3>
-                                <span>$80.00</span>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                            <div class="brand-box">
-                                <i><img src="icon/p4.png"/></i>
-                                <h3>Jane Lauren Design Chair</h3>
-                                <span>$80.00</span>
-                            </div>
-                        </div>
+                    @endforeach
                     </div>
                 </div>
             </div>

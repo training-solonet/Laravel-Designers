@@ -19,10 +19,10 @@
                     <a href="/products">Product</a>
                 </li>
                 <li class=" {{ ($title === "Blog") ? 'active' : '' }}">
-                    <a href="blog.html">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
                 <li class=" {{ ($title === "Contact") ? 'active' : '' }}">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="/contact">Contact Us</a>
                 </li>
             </ul>
 
