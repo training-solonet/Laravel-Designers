@@ -21,6 +21,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/products', [ProdukController::class, 'index']);
 
+Route::get('/products/{productDetail:id}', [ProdukController::class, 'show']);
+
 Route::get('/about', function(){
     return view('about', [
         "title" => "About"
@@ -50,6 +52,7 @@ Route::get('/categories/{category}', function(Category $category){
         'category' => $category->name
     ]);
 });
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

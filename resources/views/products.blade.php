@@ -32,7 +32,7 @@
         <div class="full product">
           <div class="product_img">
             <div class="center"> <img src="{{ asset('storage/'.$p->foto_produk) }}" alt="#"/>
-              <div class="overlay_hover"> <a class="add-bt" href="product_detail3.html">+ Add to cart</a> </div>
+              <div class="overlay_hover"> <a class="add-bt" href="/products/{{ $p->id }}">+ Add to cart</a> </div>
             </div>
           </div>
           <div class="product_detail text_align_center">
