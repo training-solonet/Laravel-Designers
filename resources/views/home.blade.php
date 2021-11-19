@@ -114,7 +114,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
                             <div class="trending-box">
                                 <figure><img src="images/1.jpg" /></figure>
-                                <a href="/categories/`"><h3>{{ $c->nama_category }}</h3></a>
+                                <a href="#"><h3>{{ $c->nama_category }}</h3></a>
                             </div>
                         </div>
                     @endforeach

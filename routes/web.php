@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
@@ -21,8 +22,13 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/products', [ProdukController::class, 'index']);
 
-Route::get('/products/{productDetail:id}', [ProdukController::class, 'show']);
+Route::get('/products/{detailproduct:id}', [ProdukController::class, 'show']);
 
+// Route::get('detailProduct', function(){
+//     return view('detailProduct', [
+//         "title" => "Detail"
+//     ]);
+// });
 Route::get('/about', function(){
     return view('about', [
         "title" => "About"
@@ -39,17 +45,11 @@ route::get('contact', function(){
     ]);
 });
 
-Route::get('/categories', function(){
-    return view('categories', [
-        'title' => 'Post Categories',
-        'categories' => Category::all()
-    ]);
-});
-Route::get('/categories/{category}', function(Category $category){
+Route::get('/categories/{category:nama_category}', function(Category $category){
     return view('category', [
-        'title' => $category->name,
+        'title' => $category->nama_category,
         'produk' => $category->produk,
-        'category' => $category->name
+        'category' => $category->nama_category
     ]);
 });
 

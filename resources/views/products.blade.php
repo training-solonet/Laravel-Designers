@@ -26,7 +26,7 @@
 <div class="ourproduct">
   <div class="container">
      <div class="row product_style_3" >
-      @foreach ($produk as $p )
+      @foreach ($produks as $p )
       <!-- product -->
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
         <div class="full product">
@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="product_detail text_align_center">
-            <p class="product_price">Rp.{{ $p->harga_produk }} <span class="old_price">{{ $p->harga_produk }}</span></p>
+            <p class="product_price">Rp. {{ $p->harga_produk }} <span class="old_price">Rp. {{ $p->harga_produk*1.5 }}</span></p>
             <p class="product_descr">{{ $p->nama_produk }}</p>
           </div>
         </div>

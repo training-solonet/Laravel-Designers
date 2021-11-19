@@ -12,15 +12,15 @@ class ProdukController extends Controller
     {
         return view('products', [
             "title" => 'Products',
-            "produk"=>  Produk::all()
+            "produks"=>  Produk::all()
         ]);
     }
 
-    public function show(Produk $produk)
+    public function show($id)
     {
-        return view('productDetail', [
+        return view('detailproduct', [
             "title" => 'Detail',
-            "produk" => $produk
+            "produk" => Produk::find($id)   
         ]);
     }
 }
