@@ -1,13 +1,12 @@
+<div class="sidebar">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
 
-            <div class="sidebar">
-         <!-- Sidebar  -->
-        <nav id="sidebar">
+                <div id="dismiss">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
 
-            <div id="dismiss">
-                <i class="fa fa-arrow-left"></i>
-            </div>
-
-            <ul class="list-unstyled components">
+                <ul class="list-unstyled components">
                 
                 <li class=" {{ ($title === "Home") ? 'active' : '' }}">
                     <a  href="/">Home</a>
