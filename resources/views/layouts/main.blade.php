@@ -61,18 +61,22 @@
                         <div class="right_header_info">
                             <ul>
                                 <li>
-                                    @if (Route::has('login'))
-                                    @auth
-                                    <a href="{{ url('/home') }}">Home</a>
-                                    @else
-                                    <a href="{{ route('login') }}"><img style="margin-right: 15px;"
-                                            src="{{ url('icon/1.png') }}" /></a>
-
-                                    @if (Route::has('register'))
-                                    <a href="{{ route('register') }}">Register</a>
-                                    @endif
-                                    @endauth
-                                    @endif
+                                    <div class="dropdown">
+                                        <a href="{{ route('login') }}"><img style="margin-right: 15px;"
+                                                    src="{{ url('icon/1.png') }}" /></a>
+                                        <div class="dropdown-content">
+                                            @if (Route::has('login'))
+                                            @auth
+                                            <a href="{{ url('/home') }}" >Home</a>
+                                            @else
+                                            <a href="{{ route('login') }}"style="color: black;">Login</a>
+                                            @if (Route::has('register'))
+                                            <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                            @endif
+                                            @endauth
+                                            @endif
+                                        </div>
+                                    </div>
                                 </li>
                                 <li class="tytyu">
                                     <a href="#"><img style="margin-right: 15px;" src="{{ url('icon/2.png') }}"
