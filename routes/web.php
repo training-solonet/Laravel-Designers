@@ -62,3 +62,9 @@ Route::get('/admin', function(){
 });
 
 Route::resource('admin/products', DashboardAdminController::class);
+
+Route::get('Cart', function(){
+    return view('Cart', [
+        "title" => "Cart"
+    ]);
+});
