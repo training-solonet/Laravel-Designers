@@ -15,8 +15,9 @@ class CreateKeranjangsTable extends Migration
     {
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
+            $table->string('foto_produk', 2048)->nullable();
             $table->integer('jumlah_produk');
-            $table->integer('total_hrg');
+            $table->integer('subtotal');
             $table->foreignId('id_user');
             $table->foreignId('id_produk');
             $table->timestamps();
