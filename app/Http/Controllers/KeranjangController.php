@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use App\Models\Keranjang;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,14 @@ class KeranjangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $data = Produk::where('id', $id)->first();
+
+        return view('cart', [
+            "title" => "Shopping Cart",
+            "produk" => $data
+        ]);
     }
 
     /**
@@ -22,9 +28,33 @@ class KeranjangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request)
+    {        
+
+        $cek = Keranjang::where('id_produk', $request->id_produk)
+                        ->where('id_user', 0)
+                        ->first();
+
+        if($cek){
+
+            //fungsi update
+            Keranjang::where('id_produk', $request->id_produk)
+                        ->where('id_user', 0)
+                        ->update([
+                                'jumlah_produk'     => $cek->jumlah_produk + $request->jumlah_produk
+                            ]);
+
+        }else{
+
+            Keranjang::create([
+                'jumlah_produk'     => $request->jumlah_produk,
+                'id_user'           => 0,
+                'id_produk'         => $request->id_produk
+            ]);
+        }
+
+
+        return redirect('cart')->with('success', 'Product is add to Cart Succesfully');
     }
 
     /**
@@ -35,9 +65,7 @@ class KeranjangController extends Controller
      */
     public function store(Request $request, $id)
     {
-        Keranjang::add([
-            'id' => $request->id,
-        ])
+        
         
     }
 
