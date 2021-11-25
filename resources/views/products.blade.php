@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="product_detail text_align_center">
-            <p class="product_price">Rp. {{ $p->harga_produk }} <span class="old_price">Rp. {{ $p->harga_produk*1.5 }}</span></p>
+            <p class="product_price">Rp. {{ number_format($p->harga_produk) }} <span class="old_price">Rp. {{ number_format($p->harga_produk*1.5) }}</span></p>
             <p class="product_descr">{{ $p->nama_produk }}</p>
           </div>
         </div>

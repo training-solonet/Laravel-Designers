@@ -44,21 +44,20 @@
         <tr>
             <th>Items</th>
             <th>Price</th>
-            <th>Quantity</th>
+            <th>Qty</th>
             <th>Subtotal</th>
         </tr>
+        
+            
+      
         <tr>
-            <td><img src="{{ url('icon/2.png') }}"/>
-            <span>
-                Harga<br>
-                Nama<br>
-                awdaw
-            </span>
-            </td>
-            <td>Griffin</td>
-            <td><input type="number" name="stok_produk" ></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
         </tr>
+       
+       
         
     </table>
 
