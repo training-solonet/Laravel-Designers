@@ -4,6 +4,8 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\DashboardAdminController;
 
 
@@ -18,7 +20,7 @@ use App\Http\Controllers\DashboardAdminController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/products', [ProdukController::class, 'index']);
 
@@ -29,27 +31,16 @@ Route::get('/products/{detailproduct:id}', [ProdukController::class, 'show']);
 //         "title" => "Detail"
 //     ]);
 // });
-Route::get('/about', function(){
-    return view('about', [
-        "title" => "About"
-    ]);
-});
-route::get('blog', function(){
-    return view('blog', [
-        "title" => "Blog"
-    ]);
-});
-route::get('contact', function(){
-    return view('contact', [
-        "title" => "Contact"
-    ]);
-});
+Route::get('/about', [HomePageController::class, 'about']);
 
-Route::get('/categories/{category:nama_category}', function(Category $category){
+route::get('blog', [HomePageController::class, 'blog']);
+route::get('contact', [HomePageController::class, 'contact']);
+
+
+Route::get('/categories', function(){
     return view('category', [
-        'title' => $category->nama_category,
-        'produk' => $category->produk,
-        'category' => $category->nama_category
+        "title" => "category",
+        'category' => Category::all()
     ]);
 });
 
@@ -63,8 +54,7 @@ Route::get('/admin', function(){
 
 Route::resource('admin/products', DashboardAdminController::class);
 
-Route::get('Cart', function(){
-    return view('Cart', [
-        "title" => "Cart"
-    ]);
-});
+
+Route::get('/cart/{id}', [KeranjangController::class, 'index']);
+
+Route::post(' cart', [KeranjangController::class, 'create']);
