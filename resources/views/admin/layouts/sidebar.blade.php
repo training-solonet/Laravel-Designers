@@ -13,6 +13,12 @@
               Products
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('admin/category*')? 'active' : '' }}" href="admin/category">
+              <span data-feather="file-text"></span>
+              Categories
+            </a>
+          </li>
         </ul>
 
       </div>
