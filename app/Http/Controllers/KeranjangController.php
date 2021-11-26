@@ -13,14 +13,16 @@ class KeranjangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $data = Produk::where('id', $id)->first();
-
+          $keranjang = Keranjang::with('produk')->get();
+        // return $keranjang;
         return view('cart', [
-            "title" => "Shopping Cart",
-            "produk" => $data
+            'title' => 'Cart',
+            'keranjang' => $keranjang,
         ]);
+
+     
     }
 
     /**
@@ -54,7 +56,7 @@ class KeranjangController extends Controller
         }
 
 
-        return redirect('cart')->with('success', 'Product is add to Cart Succesfully');
+        return redirect('products')->with('success', 'Product is add to Cart Succesfully');
     }
 
     /**

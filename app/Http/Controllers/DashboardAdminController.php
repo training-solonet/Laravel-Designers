@@ -16,7 +16,7 @@ class DashboardAdminController extends Controller
     public function index()
     {
         $produk = Produk::with('category')->get();
-        // return $category;
+        // return $produk;
         return view('admin.products.index', [
             'produk' => $produk,
         ]);
