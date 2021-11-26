@@ -12,7 +12,7 @@
         th,
         td {
             padding: 8px;
-            text-align: center;
+            text-align: left;
             border-bottom: 1px solid #ddd;
         }
 
@@ -23,6 +23,7 @@
           width: 7%;
           border-radius: 5px;
         }
+
     </style>
 </head>
 
@@ -50,12 +51,21 @@
         
             
       
+          
+    @foreach ($keranjang as $d )
+        
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+            <img style="width: 300px;" src="{{ asset('storage/'. $d->produk->foto_produk) }}" />
+            <li><strong>{{ $d->produk->nama_produk }}</strong></li>
+            {{ $d->produk->category->nama_category }}
+            
+            </td>
+            <td>Rp. {{ number_format($d->produk->harga_produk) }}</td>
+            <td>{{ $d->jumlah_produk }}</td>
+            <td>Rp. {{ number_format($d->jumlah_produk*$d->produk->harga_produk) }}</td>
         </tr>
+    @endforeach 
        
        
         

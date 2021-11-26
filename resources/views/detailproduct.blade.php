@@ -44,7 +44,7 @@
                                     <p>{{ $produk->deskripsi }}
                                         <br><span class="stock">{{ $produk->stok_produk }} in stock</span>
                                     </p>
-                                    <form class="cart" method="POST" action="{{ url('cart') }}">
+                                    <form class="cart" method="POST" action="{{ url('products') }}">
                                         @csrf
                                         <div class="quantity">
                                             <input type="hidden" value="{{ $produk->id }}" name="id_produk">
