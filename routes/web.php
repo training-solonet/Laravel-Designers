@@ -7,6 +7,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardCategoryController;
 
 
 /*
@@ -54,7 +55,9 @@ Route::get('/admin', function(){
 
 Route::resource('admin/products', DashboardAdminController::class);
 
+Route::resource('admin/category', DashboardCategoryController::class);
 
-Route::get('/cart/{id}', [KeranjangController::class, 'index']);
 
-Route::post(' cart', [KeranjangController::class, 'create']);
+Route::get('/cart', [KeranjangController::class, 'index']);
+
+Route::post('/products', [KeranjangController::class, 'create']);
