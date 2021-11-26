@@ -20,18 +20,22 @@ class DatabaseSeeder extends Seeder
        
         
         Category::create([
-            'nama_category' => 'Aksesoris'
             
+            'nama_category' => 'Aksesoris',
+            'kode_category' => 'A-1',
+            'foto_category' => 'a'
         ]);
 
         Category::create([
-            'nama_category' => 'Bed Room'
-        
+            'nama_category' => 'Bed Room',
+            'kode_category' => 'A-2',
+            'foto_category' => 'a'
         ]);
 
         Category::create([
-            'nama_category' => 'Internal'
-
+            'nama_category' => 'Internal',
+            'kode_category' => 'A-3',
+            'foto_category' => 'a'
         ]);
 
         Role::create([
