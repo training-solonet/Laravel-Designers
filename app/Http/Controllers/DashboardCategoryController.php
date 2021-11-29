@@ -28,7 +28,7 @@ class DashboardCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -73,7 +73,11 @@ class DashboardCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findorFail($id);
+
+        return view('admin.category.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -85,7 +89,15 @@ class DashboardCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = ([
+            'nama_category' => 'required | max:255', 
+            'kode_category' => 'required',
+            'foto_category' => 'required'
+        ]);
+
+        $validateData = $request->update($rules);
+
+        return redirect('admin/category')->with('success', 'successfully');
     }
 
     /**
@@ -96,6 +108,8 @@ class DashboardCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produk = Produk::find($id);
+        $produk->delete();
+        return redirect('admin/category')->with('success', 'has been deleted');
     }
 }

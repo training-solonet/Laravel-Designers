@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;  
 use App\Models\Category;
+use App\Models\Produk;  
+use App\Models\Keranjang;
 use Illuminate\Http\Request;
 
 class DashboardAdminController extends Controller
@@ -16,10 +17,9 @@ class DashboardAdminController extends Controller
     public function index()
     {
         $produk = Produk::with('category')->get();
-        // return $produk;
         return view('admin.products.index', [
             'produk' => $produk,
-        ]);
+        ]); 
     }
 
     /**
@@ -68,9 +68,7 @@ class DashboardAdminController extends Controller
      */
     public function show(Produk $produk)
     {
-        return view('admin.products.show', [
-            'produk' => $produk
-        ]);
+        
     }
 
     /**
@@ -122,8 +120,18 @@ class DashboardAdminController extends Controller
      */
     public function destroy($id)
     {
-        $produk = Produk::find($id);
-        $produk->delete();
-        return redirect('admin/products')->with('success', "has been Deleted");
+        $produk = Produk::where('id', $id)
+                    ->first();
+        $cek = Keranjang::where('id_produk', $produk->id)->first();
+        
+        if($cek){
+             return redirect('admin/products')->with('danger', "Tidak bisa dihapus karena produk ini terdapat di keranjang");
+            
+        }else{
+            Produk::find($id)->delete();
+            return redirect('admin/products')->with('success', "has been Deleted");
+            
+        }
+
     }   
 }
