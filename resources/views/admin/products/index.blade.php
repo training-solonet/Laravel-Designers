@@ -11,6 +11,14 @@
 </div>
 @endif
 
+@if(session()->has('danger'))
+<div class="alert alert-danger col-lg-8" role="alert">
+  {{ session('danger') }}
+</div>
+
+@endif
+
+
 <div class="table-responsive">
     <a href="/admin/products/create" class="btn btn-primary mb-3">Create New Products</a>
         <table class="table table-striped table-sm">
