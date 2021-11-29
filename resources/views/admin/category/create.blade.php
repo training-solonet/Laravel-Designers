@@ -45,12 +45,6 @@
         </div>
         @enderror
     </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Foto Kategori :</strong>
-                <input type="file" name="foto_category" class="form-control" placeholder="Image">
-            </div>
-        </div>
         
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

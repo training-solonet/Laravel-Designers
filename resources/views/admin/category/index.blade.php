@@ -24,7 +24,7 @@
             </tr>
           </thead>
           <tbody>
-          @foreach ($produk as $p )
+          @foreach ($category as $p )
           <tr>
               <td>{{ $loop->iteration }}</td>
               <td> <img style="width: 30px"src="{{ asset('storage/'.$p->foto_category) }}" class="img-fluid mt-3 mb-3"></td>
