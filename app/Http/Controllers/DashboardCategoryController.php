@@ -108,7 +108,7 @@ class DashboardCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $produk = Produk::find($id);
+        $produk = Category::find($id);
         $produk->delete();
         return redirect('admin/category')->with('success', 'has been deleted');
     }

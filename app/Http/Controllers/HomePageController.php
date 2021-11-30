@@ -34,7 +34,9 @@ class HomePageController extends Controller
     public function blog()
     {
         return view('blog', [
-            "title" => 'blog'
+            "title" => 'Blog',
+            "produk" => Produk::all(),
+            "category" => Category::all()
         ]);
     }
 }

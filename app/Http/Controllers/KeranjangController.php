@@ -111,8 +111,10 @@ class KeranjangController extends Controller
      * @param  \App\Models\Keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Keranjang $keranjang)
+    public function destroy($id)
     {
-        //
+        $cart = Keranjang::find($id);
+        $cart->delete();
+        return redirect('cart')->with('success', '');
     }
 }
