@@ -2,16 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Produk;
-use App\Models\Keranjang;
-use App\Models\Role;
-use Laravel\Sanctum\HasApiTokens;
-use Laravel\Jetstream\HasProfilePhoto;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -26,7 +23,11 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = ['id'];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -54,19 +55,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-
-    public function produk()
-    {
-        return $this->hasMany(Produk::class);
-    }
-
-    public function keranjang()
-    {
-        return $this->hasMany(Keranjang::class);
-    }
-
-    public function roles()
-    {
-        return $this->hasMany(Role::class);
-    }
+    protected $appends = [
+        'profile_photo_url',
+    ];
 }
