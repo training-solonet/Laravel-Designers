@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
  <div class="dropdown">
      <a href="/cart"><img style="margin-right: 15px;" src="{{ url('icon/3.png') }}" /></a>
      <div class="dropdown-content">

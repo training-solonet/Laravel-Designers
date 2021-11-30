@@ -67,7 +67,7 @@
                                         <div class="dropdown-content">
                                             @if (Route::has('login'))
                                             @auth
-                                            <a href="{{ url('/home') }}" >Home</a>
+                                            <a href="{{ url('/home') }}" ></a>
                                             @else
                                             <a href="{{ route('login') }}"style="color: black;">Login</a>
                                             @if (Route::has('register'))

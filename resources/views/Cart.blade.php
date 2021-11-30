@@ -47,6 +47,7 @@
             <th>Price</th>
             <th>Qty</th>
             <th>Subtotal</th>
+            <th></th>
         </tr>
         
             
@@ -64,6 +65,13 @@
             <td>Rp. {{ number_format($d->produk->harga_produk) }}</td>
             <td>{{ $d->jumlah_produk }}</td>
             <td>Rp. {{ number_format($d->jumlah_produk*$d->produk->harga_produk) }}</td>
+            <td>
+                <form action="{{ url('cart', $d->id) }}" method="post" class="d-inline">
+                @csrf
+                @method('delete')
+                <button class="badge bg-danger border-0" onclick="return confirm('yakin ingin hapus?')"><span data-feather="x-circle"></span></button>
+                </form>
+            </td>
         </tr>
     @endforeach 
        
