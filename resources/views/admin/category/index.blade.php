@@ -12,7 +12,7 @@
 @endif
 
 <div class="table-responsive">
-    <a href="/admin/products/create" class="btn btn-primary mb-3">Create New Category</a>
+    <a href="/admin/category/create" class="btn btn-primary mb-3">Create New Category</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -32,8 +32,8 @@
               <td>{{ $p->kode_category}}</td>
               
               <td>
-               <a href="/admin/products/{{ $p->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                <form action="{{ url('admin/products', $p->id) }}" method="post" class="d-inline">
+               <a href="/admin/category/{{ $p->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                <form action="{{ url('admin/category', $p->id) }}" method="post" class="d-inline">
                 @csrf
                 @method('delete')
                 <button class="badge bg-danger border-0" onclick="return confirm('yakin ingin hapus?')"><span data-feather="x-circle"></span></button>
