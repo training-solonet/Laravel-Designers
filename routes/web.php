@@ -8,6 +8,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardCategoryController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -45,19 +46,20 @@ Route::get('/categories', function(){
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-Route::get('/admin', function(){
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {
     return view('admin.index');
-});
+})->name('admin');
+
+// Route::get('/admin', function(){
+//     return view('admin.index');
+// });
 
 Route::resource('admin/products', DashboardAdminController::class);
 
 Route::resource('admin/category', DashboardCategoryController::class);
 
 
-Route::get('/cart', [KeranjangController::class, 'index']);
+Route::get('/cart', [KeranjangController::class, 'index'])->middleware('auth');
 
 Route::post('/products', [KeranjangController::class, 'create']);
+
